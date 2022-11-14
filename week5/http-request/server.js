@@ -1,29 +1,29 @@
 // Server.js.
 const express = require('express');
-// const expressRouter = express.Router();
 const app = express();
 const {v4: uuidv4} = require('uuid');
+const cors = require('cors');
 
 // Port of localhost.
 const port = 5000;
 
 // Middleware.
 app.use(express.json());
-// app.use(expressRouter);
-
+app.use(cors());
 // Array of objects.
 let recycledItems = [
     {name: "pizza-box", description: "cardboard", recyclable: "true", quantity: 5, price: 2.50, _id: uuidv4()}
 ];
 
 // Get route. http://localhost:3000/_id
-app.get("/:recycledId", (req, res) => {
+app.get("/get1/:recycledId", (req, res) => {
     const singleItem = recycledItems.find(recycled => recycled._id === req.params.recycledId);
     res.send(singleItem);
 });
 
 //http://localhost:3000/
 app.get("/", (req, res) => {
+    console.log("test")
     res.send(recycledItems);
 });
 

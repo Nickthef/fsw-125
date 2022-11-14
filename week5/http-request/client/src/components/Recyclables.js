@@ -1,9 +1,9 @@
 import { useState } from "react";
 import AddItem from "./AddItem";
 
-function Recyclables(name, description, price, _id, deleteItems, updateItems) {
+function Recyclables({name, description, price, _id, deleteItems, updateItems}) {
     const [updateToggle, setUpdateToggle] = useState(false);
-
+console.log(name, description, price, _id, deleteItems, updateItems)
     return (
         <div className="items">
             {!updateToggle ?
@@ -30,7 +30,7 @@ function Recyclables(name, description, price, _id, deleteItems, updateItems) {
             _id = {_id}
             submit = {updateItems}/>
             <button className="closeBtn" onClick={() => setUpdateToggle(prevToggle => ! prevToggle)}>Close</button>
-            </>}
+            </>} 
         </div>
     )
 }
