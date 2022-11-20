@@ -1,4 +1,4 @@
-// import '../MovieFormHandler.css';
+
 import { useState } from 'react';
 
 function MovieFormHandler({ title, genre, budgetOverFiftyMillion, stars, yearReleased, _id, submit, btnText, setEditToggle }) {

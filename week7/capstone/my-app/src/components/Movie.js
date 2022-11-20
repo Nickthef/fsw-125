@@ -1,4 +1,4 @@
-// import '../Movie.css'
+
 import { useState } from 'react';
 import MovieFormHandler from './MovieFormHandler';
 
